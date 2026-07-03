@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff8f0;
+  --foreground: #241c1c;
+  --coral: #ff6b57;
+  --turquoise: #2ec4b6;
+  --mustard: #ffc145;
+  --blush: #ff9ec4;
+  --cream: #fff8f0;
+  --charcoal: #241c1c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-coral: var(--coral);
+  --color-turquoise: var(--turquoise);
+  --color-mustard: var(--mustard);
+  --color-blush: var(--blush);
+  --color-cream: var(--cream);
+  --color-charcoal: var(--charcoal);
+  --font-heading: var(--font-fredoka);
+  --font-heading-ar: var(--font-cairo);
+  --font-sans: var(--font-inter);
+  --font-sans-ar: var(--font-cairo);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-cairo), sans-serif;
+}
+
+html[dir="rtl"] .font-heading {
+  font-family: var(--font-cairo), sans-serif;
+}

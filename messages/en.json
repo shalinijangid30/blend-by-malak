@@ -1,0 +1,104 @@
+{
+  "brand": {
+    "name": "Blend by Malak",
+    "tagline": "house of ART . Blend in your own way"
+  },
+  "nav": {
+    "home": "Home",
+    "workshops": "Workshops",
+    "privateEvents": "Private Events",
+    "gallery": "Gallery",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "common": {
+    "whatsappCta": "Book on WhatsApp",
+    "reserveSpot": "Reserve your spot",
+    "callsNotAccepted": "Calls not accepted — WhatsApp only",
+    "qar": "QAR",
+    "spotsLeft": "spots left",
+    "minutes": "min"
+  },
+  "home": {
+    "heroEyebrow": "Doha's favourite paint & craft pop-up",
+    "heroTitle": "Come blend in your own way",
+    "heroSubtitle": "Mirror, mug, canvas and crochet workshops — no experience needed, just good music, good people, and paint on your hands.",
+    "heroCta": "Book on WhatsApp",
+    "thisWeekTitle": "This week's workshop",
+    "thisWeekCta": "Reserve your spot",
+    "categoriesTitle": "What we blend",
+    "categoriesSubtitle": "Pick your medium — every session is beginner-friendly.",
+    "pressTitle": "As seen in",
+    "galleryTitle": "From our last sessions",
+    "galleryCta": "See the full gallery",
+    "footerCtaTitle": "Ready to get messy?",
+    "footerCtaSubtitle": "DM-free booking. One tap and you're on the list.",
+    "footerCta": "Book on WhatsApp"
+  },
+  "categories": {
+    "mirror": { "name": "Mirror Painting", "blurb": "Paint a mirror you'll actually hang up." },
+    "mug": { "name": "Mug Painting", "blurb": "Sip-worthy art, dishwasher-safe finish." },
+    "crochet": { "name": "Crochet", "blurb": "Learn the hook, leave with a project." },
+    "canvas": { "name": "Canvas Painting", "blurb": "Guided canvas sessions, zero pressure." },
+    "private": { "name": "Private Events", "blurb": "Birthdays, hens, corporate — we bring the studio to you." }
+  },
+  "workshops": {
+    "title": "Workshops",
+    "subtitle": "Public pop-up sessions — grab a spot before it fills up.",
+    "includesLabel": "Includes",
+    "durationLabel": "Duration",
+    "priceLabel": "Price",
+    "scheduleTitle": "This week's schedule",
+    "scheduleSubtitle": "Location rotates by café partner — updated every week.",
+    "spotsLeftShort": "left"
+  },
+  "privateEvents": {
+    "title": "Private Events",
+    "subtitle": "Birthdays, hen parties, girls' hangouts, corporate team-building — we set up wherever you are.",
+    "includesTitle": "What's included",
+    "includes": [
+      "All materials and aprons",
+      "A professional artist guiding the session",
+      "Full setup and cleanup",
+      "A theme picked with you beforehand"
+    ],
+    "formTitle": "Tell us about your event",
+    "formName": "Your name",
+    "formEventType": "Event type",
+    "formGuestCount": "Guest count",
+    "formDate": "Preferred date",
+    "formSubmit": "Send via WhatsApp",
+    "formNote": "This opens WhatsApp with your details pre-filled — nothing is submitted anywhere else.",
+    "galleryTitle": "Past private events"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "A peek at what happens when Doha picks up a paintbrush."
+  },
+  "about": {
+    "title": "About Blend by Malak",
+    "storyEyebrow": "Our story",
+    "story1": "Blend by Malak started as a simple idea: art shouldn't feel intimidating, and a good hangout shouldn't need an occasion. What began as small pop-ups around Doha's cafés has grown into a community of 12K+ who show up for the paint, the playlists, and each other.",
+    "story2": "We're proudly Palestinian-owned and woman-owned — it shapes how we build every session, from the playlists to the partnerships.",
+    "philosophyTitle": "house of ART . Blend in your own way",
+    "philosophyBody": "No fine-art pressure, no perfect technique required. Every mirror, mug, canvas and crochet hook is just an excuse to sit down, create something, and blend in your own way.",
+    "partnersTitle": "Café partners"
+  },
+  "contact": {
+    "title": "Book a spot",
+    "subtitle": "We're WhatsApp-only — it's the fastest way to reach us and the only inbox we check.",
+    "whatsappTitle": "Chat with us",
+    "whatsappBody": "Tap below and we'll reply with this week's schedule and availability.",
+    "socialTitle": "Follow along",
+    "locationsTitle": "Where you'll find us"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "madeWith": "Palestinian-owned. Woman-owned. Doha, Qatar."
+  },
+  "press": {
+    "quote1": "The pop-up turning Doha's cafés into paint studios.",
+    "quote2": "One of Doha's most Instagrammable new hangouts.",
+    "quote3": "Proof that Doha's art scene is having a moment."
+  }
+}
