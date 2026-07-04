@@ -6,7 +6,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { ServiceCard } from "@/components/ServiceCard";
 import { WorkshopScheduleStrip } from "@/components/WorkshopScheduleStrip";
 import { PressStrip } from "@/components/PressStrip";
-import { GalleryGrid } from "@/components/GalleryGrid";
+import { GalleryMarquee } from "@/components/GalleryMarquee";
 import { BlobBackground } from "@/components/BlobBackground";
 import { MirrorIcon, MugIcon, YarnIcon, CanvasIcon, SparkleIcon } from "@/components/Icons";
 
@@ -79,7 +79,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
         </div>
       </section>
 
-      <section className="bg-white py-14">
+      <section className="overflow-hidden bg-white py-14">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="flex items-end justify-between gap-4">
             <h2 className="font-heading text-2xl font-semibold text-charcoal sm:text-3xl">{t("home.galleryTitle")}</h2>
@@ -87,9 +87,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
               {t("home.galleryCta")} →
             </Link>
           </div>
-          <div className="mt-6">
-            <GalleryGrid limit={6} />
-          </div>
+        </div>
+        <div className="relative left-1/2 mt-6 w-screen -translate-x-1/2">
+          <GalleryMarquee />
         </div>
       </section>
 
