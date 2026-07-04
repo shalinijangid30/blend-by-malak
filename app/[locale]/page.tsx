@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
@@ -8,6 +7,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { WorkshopScheduleStrip } from "@/components/WorkshopScheduleStrip";
 import { PressStrip } from "@/components/PressStrip";
 import { GalleryGrid } from "@/components/GalleryGrid";
+import { BlobBackground } from "@/components/BlobBackground";
 import { MirrorIcon, MugIcon, YarnIcon, CanvasIcon, SparkleIcon } from "@/components/Icons";
 
 export default async function HomePage({ params }: { params: Promise<{ locale: Locale }> }) {
@@ -27,15 +27,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
   return (
     <div>
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image src="/images/hero-paint.jpg" alt="" fill priority className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/50 to-charcoal/20" />
-        </div>
+        <BlobBackground />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-charcoal/10" />
         <div className="relative mx-auto flex min-h-[70vh] max-w-6xl flex-col items-start justify-end px-4 py-16 text-cream sm:px-6">
           <p className="font-heading text-sm font-semibold uppercase tracking-wide text-mustard">
             {t("home.heroEyebrow")}
           </p>
-          <h1 className="mt-3 max-w-xl font-heading text-4xl font-semibold leading-tight sm:text-5xl">
+          <h1 className="mt-3 max-w-xl font-heading text-4xl font-semibold leading-tight drop-shadow-sm sm:text-5xl">
             {t("home.heroTitle")}
           </h1>
           <p className="mt-4 max-w-lg text-base text-cream/90 sm:text-lg">{t("home.heroSubtitle")}</p>

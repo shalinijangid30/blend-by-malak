@@ -9,6 +9,8 @@
   --blush: #ff9ec4;
   --cream: #fff8f0;
   --charcoal: #241c1c;
+  --navy: #3a5a9b;
+  --plum: #8a6bb8;
 }
 
 @theme inline {
@@ -20,6 +22,8 @@
   --color-blush: var(--blush);
   --color-cream: var(--cream);
   --color-charcoal: var(--charcoal);
+  --color-navy: var(--navy);
+  --color-plum: var(--plum);
   --font-heading: var(--font-fredoka);
   --font-heading-ar: var(--font-cairo);
   --font-sans: var(--font-inter);
