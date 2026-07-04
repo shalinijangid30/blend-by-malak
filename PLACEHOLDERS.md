@@ -8,9 +8,13 @@ engages.
   real WhatsApp Business number.
 - **Pricing** — `data/workshops.ts` uses the ~QR170 figure seen in press.
   Confirm current pricing before publishing anything real.
-- **Photos** — `public/images/*.jpg` are 3 royalty-free Unsplash paint
-  photos used as a stand-in for her actual workshop/Instagram photography.
-  Category cards use icon tiles instead of mismatched stock photos.
+- **Photos** — `public/images/sessions/*.jpg` are real photos from past
+  Blend by Malak sessions (gallery + home gallery preview) — confirm she's
+  okay with these specific shots before this goes live. The 3 files
+  directly under `public/images/*.jpg` (hero blob backdrop is now CSS, but
+  `gallery-abstract.jpg` is still used as the About page banner) are
+  royalty-free Unsplash stand-ins. Category cards use icon tiles instead of
+  stock photos.
 - **Weekly schedule** — `data/schedule.ts` is fictional (café names, dates,
   themes). This is the file meant to be hand-edited every week; could later
   move to a lightweight CMS field.
