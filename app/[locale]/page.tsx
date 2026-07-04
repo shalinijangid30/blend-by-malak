@@ -8,6 +8,7 @@ import { WorkshopScheduleStrip } from "@/components/WorkshopScheduleStrip";
 import { PressStrip } from "@/components/PressStrip";
 import { GalleryMarquee } from "@/components/GalleryMarquee";
 import { BlobBackground } from "@/components/BlobBackground";
+import { Parallax } from "@/components/Parallax";
 import { MirrorIcon, MugIcon, YarnIcon, CanvasIcon, SparkleIcon } from "@/components/Icons";
 
 export default async function HomePage({ params }: { params: Promise<{ locale: Locale }> }) {
@@ -27,7 +28,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
   return (
     <div>
       <section className="relative overflow-hidden">
-        <BlobBackground />
+        <Parallax speed={-0.08} className="absolute -top-24 -bottom-24 inset-x-0">
+          <BlobBackground />
+        </Parallax>
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-charcoal/10" />
         <div className="relative mx-auto flex min-h-[70vh] max-w-6xl flex-col items-start justify-end px-4 py-16 text-cream sm:px-6">
           <p className="font-heading text-sm font-semibold uppercase tracking-wide text-mustard">
@@ -48,16 +51,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
             {t("nav.workshops")} →
           </Link>
         </div>
-        <div className="mt-6">
+        <Parallax speed={0.06} className="mt-6">
           <WorkshopScheduleStrip locale={locale} />
-        </div>
+        </Parallax>
       </section>
 
       <section className="bg-white py-14">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="font-heading text-2xl font-semibold text-charcoal sm:text-3xl">{t("home.categoriesTitle")}</h2>
           <p className="mt-2 text-charcoal/70">{t("home.categoriesSubtitle")}</p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <Parallax speed={-0.05} className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((c) => (
               <ServiceCard
                 key={c.key}
@@ -68,15 +71,15 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
                 href={c.href}
               />
             ))}
-          </div>
+          </Parallax>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <h2 className="text-center font-heading text-xl font-semibold text-charcoal/60">{t("home.pressTitle")}</h2>
-        <div className="mt-6">
+        <Parallax speed={0.07} className="mt-6">
           <PressStrip />
-        </div>
+        </Parallax>
       </section>
 
       <section className="overflow-hidden bg-white py-14">
@@ -88,9 +91,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
             </Link>
           </div>
         </div>
-        <div className="relative left-1/2 mt-6 w-screen -translate-x-1/2">
-          <GalleryMarquee />
-        </div>
+        <Parallax speed={-0.06} className="mt-6">
+          <div className="relative left-1/2 w-screen -translate-x-1/2">
+            <GalleryMarquee />
+          </div>
+        </Parallax>
       </section>
 
       <section className="bg-coral py-16 text-center text-white">
