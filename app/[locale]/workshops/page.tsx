@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { workshops } from "@/data/workshops";
 import { buildWaLink } from "@/lib/whatsapp";
+import { pastelTones } from "@/lib/pastelTones";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { WorkshopScheduleStrip } from "@/components/WorkshopScheduleStrip";
 import { MirrorIcon, MugIcon, YarnIcon, CanvasIcon } from "@/components/Icons";
@@ -25,19 +26,20 @@ export default async function WorkshopsPage({ params }: { params: Promise<{ loca
       <p className="mt-2 max-w-xl text-charcoal/70">{t("workshops.subtitle")}</p>
 
       <div className="mt-10 grid gap-6 sm:grid-cols-2">
-        {workshops.map((workshop) => {
+        {workshops.map((workshop, index) => {
           const Icon = iconByCategory[workshop.category];
+          const tone = pastelTones[index % pastelTones.length];
           const message =
             locale === "ar"
               ? `مرحباً! أريد حجز مكان في ${tc(`${workshop.category}.name`)}.`
               : `Hi! I'd like to book a spot for ${tc(`${workshop.category}.name`)}.`;
 
           return (
-            <div key={workshop.id} className="flex flex-col rounded-3xl border border-charcoal/10 bg-white p-6">
-              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-coral/10 text-coral">
+            <div key={workshop.id} className={`flex flex-col rounded-3xl border border-charcoal/10 ${tone.bg} p-6`}>
+              <span className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-white/70 ${tone.accent}`}>
                 <Icon className="h-6 w-6" />
               </span>
-              <h2 className="mt-4 font-heading text-xl font-semibold text-charcoal">{tc(`${workshop.category}.name`)}</h2>
+              <h2 className={`mt-4 font-heading text-xl font-semibold ${tone.accent}`}>{tc(`${workshop.category}.name`)}</h2>
               <p className="mt-1 text-sm text-charcoal/70">{tc(`${workshop.category}.blurb`)}</p>
 
               <dl className="mt-4 space-y-1 text-sm text-charcoal/70">
