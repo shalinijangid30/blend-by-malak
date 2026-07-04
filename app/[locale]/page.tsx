@@ -18,11 +18,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
   const tc = await getTranslations("categories");
 
   const categories = [
-    { key: "mirror", icon: <MirrorIcon />, tone: "coral" as const, href: `/${locale}/workshops` },
-    { key: "mug", icon: <MugIcon />, tone: "turquoise" as const, href: `/${locale}/workshops` },
-    { key: "crochet", icon: <YarnIcon />, tone: "mustard" as const, href: `/${locale}/workshops` },
-    { key: "canvas", icon: <CanvasIcon />, tone: "blush" as const, href: `/${locale}/workshops` },
-    { key: "private", icon: <SparkleIcon />, tone: "coral" as const, href: `/${locale}/private-events` },
+    { key: "mirror", icon: <MirrorIcon />, href: `/${locale}/workshops` },
+    { key: "mug", icon: <MugIcon />, href: `/${locale}/workshops` },
+    { key: "crochet", icon: <YarnIcon />, href: `/${locale}/workshops` },
+    { key: "canvas", icon: <CanvasIcon />, href: `/${locale}/workshops` },
+    { key: "private", icon: <SparkleIcon />, href: `/${locale}/private-events` },
   ];
 
   return (
@@ -61,13 +61,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
           <h2 className="font-heading text-2xl font-semibold text-charcoal sm:text-3xl">{t("home.categoriesTitle")}</h2>
           <p className="mt-2 text-charcoal/70">{t("home.categoriesSubtitle")}</p>
           <Parallax speed={-0.05} className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((c) => (
+            {categories.map((c, index) => (
               <ServiceCard
                 key={c.key}
                 icon={c.icon}
                 title={tc(`${c.key}.name`)}
                 blurb={tc(`${c.key}.blurb`)}
-                tone={c.tone}
+                toneIndex={index}
                 href={c.href}
               />
             ))}

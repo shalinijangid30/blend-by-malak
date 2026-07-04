@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { galleryImages } from "@/data/gallery";
+import { assetPath } from "@/lib/assetPath";
 
 export function GalleryGrid({ limit }: { limit?: number }) {
   const images = limit ? galleryImages.slice(0, limit) : galleryImages;
@@ -9,7 +10,7 @@ export function GalleryGrid({ limit }: { limit?: number }) {
       {images.map((image, i) => (
         <div key={`${image.src}-${i}`} className="relative aspect-square overflow-hidden rounded-2xl bg-charcoal/5">
           <Image
-            src={image.src}
+            src={assetPath(image.src)}
             alt={image.alt}
             fill
             sizes="(max-width: 640px) 50vw, 33vw"

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
+import { assetPath } from "@/lib/assetPath";
 
 const cafePartners = ["Isaan Cafe", "Ipanema Coffee", "The Books Cafe"];
 
@@ -12,7 +13,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   return (
     <div>
       <section className="relative h-64 w-full overflow-hidden sm:h-80">
-        <Image src="/images/gallery-abstract.jpg" alt="" fill className="object-cover" />
+        <Image src={assetPath("/images/gallery-abstract.jpg")} alt="" fill className="object-cover" />
         <div className="absolute inset-0 bg-charcoal/50" />
         <div className="relative flex h-full items-end px-4 pb-8 sm:px-6">
           <h1 className="font-heading text-3xl font-semibold text-cream sm:text-4xl">{t("title")}</h1>

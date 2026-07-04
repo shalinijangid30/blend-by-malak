@@ -3,16 +3,8 @@ import type { Locale } from "@/i18n/routing";
 import { thisWeeksSchedule } from "@/data/schedule";
 import { workshops } from "@/data/workshops";
 import { buildWaLink } from "@/lib/whatsapp";
+import { pastelTones } from "@/lib/pastelTones";
 import { WhatsAppButton } from "./WhatsAppButton";
-
-const pastelTones = [
-  { bg: "bg-coral/10", accent: "text-coral", spots: "text-coral" },
-  { bg: "bg-turquoise/10", accent: "text-turquoise", spots: "text-turquoise" },
-  { bg: "bg-mustard/15", accent: "text-[#8a6200]", spots: "text-[#8a6200]" },
-  { bg: "bg-blush/15", accent: "text-[#c23a75]", spots: "text-[#c23a75]" },
-  { bg: "bg-plum/10", accent: "text-plum", spots: "text-plum" },
-  { bg: "bg-navy/10", accent: "text-navy", spots: "text-navy" },
-];
 
 export function WorkshopScheduleStrip({ locale }: { locale: Locale }) {
   const t = useTranslations();
@@ -43,7 +35,7 @@ export function WorkshopScheduleStrip({ locale }: { locale: Locale }) {
               <p className="mt-3 text-sm text-charcoal/60">
                 {tc(`${workshop.category}.name`)} · {workshop.priceQar} {t("common.qar")}
               </p>
-              <p className={`mt-1 text-sm font-medium ${tone.spots}`}>
+              <p className={`mt-1 text-sm font-medium ${tone.accent}`}>
                 {entry.spotsLeft} {t("workshops.spotsLeftShort")}
               </p>
             </div>
