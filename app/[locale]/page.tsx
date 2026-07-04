@@ -9,6 +9,7 @@ import { PressStrip } from "@/components/PressStrip";
 import { GalleryMarquee } from "@/components/GalleryMarquee";
 import { BlobBackground } from "@/components/BlobBackground";
 import { Parallax } from "@/components/Parallax";
+import { assetPath } from "@/lib/assetPath";
 import { MirrorIcon, MugIcon, YarnIcon, CanvasIcon, SparkleIcon } from "@/components/Icons";
 
 export default async function HomePage({ params }: { params: Promise<{ locale: Locale }> }) {
@@ -28,9 +29,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: L
   return (
     <div>
       <section className="relative overflow-hidden">
-        <Parallax speed={-0.08} className="absolute -top-24 -bottom-24 inset-x-0">
+        <Parallax speed={-0.08} className="absolute -top-24 -bottom-24 inset-x-0 landscape:hidden">
           <BlobBackground />
         </Parallax>
+        <video
+          className="absolute inset-0 hidden h-full w-full object-cover landscape:block"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          aria-hidden="true"
+          src={assetPath("/videos/hero-landscape.mp4")}
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/30 to-charcoal/10" />
         <div className="relative mx-auto flex min-h-[70vh] max-w-6xl flex-col items-start justify-end px-4 py-16 text-cream sm:px-6">
           <p className="font-heading text-sm font-semibold uppercase tracking-wide text-mustard">
