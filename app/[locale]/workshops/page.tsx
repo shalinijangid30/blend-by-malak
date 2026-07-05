@@ -85,11 +85,11 @@ export default async function WorkshopsPage({ params }: { params: Promise<{ loca
           })}
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="flex flex-col gap-4">
           {workshopVideos.map((src) => (
             <video
               key={src}
-              className="aspect-[9/16] w-full rounded-3xl bg-charcoal/5 object-cover"
+              className="aspect-[9/16] w-full max-w-xs mx-auto rounded-3xl bg-charcoal/5 object-cover"
               src={assetPath(src)}
               controls
               playsInline
