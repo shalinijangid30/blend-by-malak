@@ -1,10 +1,9 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { workshops } from "@/data/workshops";
-import { buildWaLink } from "@/lib/whatsapp";
 import { pastelTones } from "@/lib/pastelTones";
 import { assetPath } from "@/lib/assetPath";
-import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { ReserveModal } from "@/components/ReserveModal";
 import { WorkshopScheduleStrip } from "@/components/WorkshopScheduleStrip";
 import { MirrorIcon, MugIcon, YarnIcon, CanvasIcon } from "@/components/Icons";
 
@@ -38,10 +37,6 @@ export default async function WorkshopsPage({ params }: { params: Promise<{ loca
           {workshops.map((workshop, index) => {
             const Icon = iconByCategory[workshop.category];
             const tone = pastelTones[index % pastelTones.length];
-            const message =
-              locale === "ar"
-                ? `مرحباً! أريد حجز مكان في ${tc(`${workshop.category}.name`)}.`
-                : `Hi! I'd like to book a spot for ${tc(`${workshop.category}.name`)}.`;
 
             return (
               <div key={workshop.id} className={`flex flex-col rounded-3xl border border-charcoal/10 ${tone.bg} p-6`}>
@@ -75,10 +70,11 @@ export default async function WorkshopsPage({ params }: { params: Promise<{ loca
                   ))}
                 </ul>
 
-                <WhatsAppButton
-                  href={buildWaLink(message)}
-                  label={t("common.reserveSpot")}
-                  className="mt-6 w-full justify-center"
+                <ReserveModal
+                  workshopName={tc(`${workshop.category}.name`)}
+                  locale={locale}
+                  triggerLabel={t("common.reserveSpot")}
+                  triggerClassName="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-coral px-6 py-3 font-heading text-sm font-medium text-white shadow-lg shadow-coral/30 transition-transform hover:brightness-105 active:scale-95 sm:text-base"
                 />
               </div>
             );
