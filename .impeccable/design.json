@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-05T11:39:05Z",
+  "title": "Design System: Blend by Malak",
+  "extensions": {
+    "colorMeta": {
+      "coral": {
+        "role": "primary",
+        "displayName": "Coral",
+        "canonical": "oklch(68% 0.19 25)",
+        "tonalRamp": ["#4a1a12", "#7a2c1e", "#b23d29", "#e0503a", "#ff6b57", "#ff8f7f", "#ffb8ab", "#ffe0d9"]
+      },
+      "turquoise": {
+        "role": "secondary",
+        "displayName": "Turquoise",
+        "canonical": "oklch(72% 0.11 180)",
+        "tonalRamp": ["#0f2e2b", "#16453f", "#1e5c53", "#25a396", "#2ec4b6", "#6dd6cb", "#a3e6df", "#d6f5f1"]
+      },
+      "mustard": {
+        "role": "secondary",
+        "displayName": "Mustard",
+        "canonical": "oklch(85% 0.15 85)",
+        "tonalRamp": ["#4d3a00", "#735700", "#997400", "#cc9c1a", "#ffc145", "#ffd06e", "#ffe0a3", "#fff2d6"]
+      },
+      "blush": {
+        "role": "secondary",
+        "displayName": "Blush",
+        "canonical": "oklch(80% 0.13 355)",
+        "tonalRamp": ["#5c1734", "#82214a", "#a82b60", "#d94f8a", "#ff9ec4", "#ffb6d3", "#ffd0e4", "#ffe9f2"]
+      },
+      "plum": {
+        "role": "secondary",
+        "displayName": "Plum",
+        "canonical": "oklch(58% 0.11 300)",
+        "tonalRamp": ["#241a3a", "#362a54", "#4a3c70", "#6c579c", "#8a6bb8", "#a68ccb", "#c2addb", "#e0d3ec"]
+      },
+      "navy": {
+        "role": "secondary",
+        "displayName": "Navy",
+        "canonical": "oklch(45% 0.1 265)",
+        "tonalRamp": ["#0f1a30", "#1a2a4a", "#233a63", "#2e4a80", "#3a5a9b", "#5c7ab5", "#8ba3ce", "#c2d1e8"]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Cream",
+        "canonical": "oklch(97.5% 0.015 60)",
+        "tonalRamp": ["#3a2f22", "#5c4c38", "#8a7458", "#c2a988", "#ecd9bd", "#f7ead9", "#fdf3e8", "#fff8f0"]
+      },
+      "charcoal": {
+        "role": "neutral",
+        "displayName": "Charcoal",
+        "canonical": "oklch(24% 0.01 30)",
+        "tonalRamp": ["#0e0b0a", "#181312", "#241c1c", "#3a2f2e", "#5c4e4c", "#8a7a78", "#bcaeac", "#e8e0de"]
+      }
+    },
+    "typographyMeta": {
+      "heading": { "displayName": "Fredoka (EN heading)", "purpose": "Hero headline, section titles, card titles, all buttons." },
+      "heading-ar": { "displayName": "Cairo (AR heading)", "purpose": "RTL equivalent of Fredoka for headings/buttons." },
+      "body": { "displayName": "Inter (EN body)", "purpose": "Body copy, form labels, descriptions." },
+      "body-ar": { "displayName": "Cairo (AR body)", "purpose": "RTL body copy — Cairo covers both heading and body weight in Arabic." }
+    },
+    "shadows": [
+      { "name": "cta-glow", "value": "shadow-lg shadow-coral/30", "purpose": "Reserved exclusively for the primary coral WhatsApp button, in every variant." },
+      { "name": "card-hover-lift", "value": "hover:-translate-y-1 hover:shadow-xl", "purpose": "Category cards only, signals clickability on hover, gone at rest." }
+    ],
+    "motion": [
+      { "name": "marquee", "value": "linear 28s infinite (translateX 0 to -50% / -50% to 0)", "purpose": "Home gallery two-row marquee, opposite directions per row, respects prefers-reduced-motion." },
+      { "name": "parallax", "value": "rAF-throttled scroll listener, per-section speed multiplier", "purpose": "Home page section drift (hero backdrop, schedule, categories, press, gallery), respects prefers-reduced-motion." },
+      { "name": "active-scale", "value": "active:scale-95", "purpose": "Tactile press feedback on every button." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (WhatsApp CTA)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Solid coral pill button with WhatsApp glyph, used for every wa.me CTA site-wide.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\"><svg class=\"ds-btn-primary__icon\" viewBox=\"0 0 24 24\" fill=\"currentColor\" width=\"20\" height=\"20\"><path d=\"M12.01 2C6.48 2 2 6.44 2 11.92c0 1.87.51 3.61 1.4 5.11L2 22l5.13-1.35a10.02 10.02 0 0 0 4.88 1.25h.01c5.53 0 10.02-4.44 10.02-9.92C22 6.44 17.54 2 12.01 2Z\"/></svg>Book on WhatsApp</a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; border-radius: 9999px; padding: 12px 24px; font-family: 'Fredoka', sans-serif; font-weight: 500; font-size: 15px; background: #ff6b57; color: #ffffff; box-shadow: 0 10px 25px -5px rgba(255,107,87,0.3); text-decoration: none; transition: filter 0.15s, transform 0.1s; } .ds-btn-primary:hover { filter: brightness(1.05); } .ds-btn-primary:active { transform: scale(0.95); } .ds-btn-primary:focus-visible { outline: 2px solid #241c1c; outline-offset: 2px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action on light backgrounds; inverts to solid charcoal on hover.",
+      "html": "<a class=\"ds-btn-outline\" href=\"#\">See the full gallery</a>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; gap: 8px; border-radius: 9999px; padding: 12px 24px; border: 2px solid #241c1c; color: #241c1c; font-family: 'Fredoka', sans-serif; font-weight: 500; background: transparent; text-decoration: none; transition: background 0.15s, color 0.15s; } .ds-btn-outline:hover { background: #241c1c; color: #fff8f0; }"
+    },
+    {
+      "name": "Pastel Card",
+      "kind": "card",
+      "refersTo": "card-pastel",
+      "description": "Flat, hairline-bordered card filled with one tone from the six-color rotation; used for workshop cards, schedule days, category cards, press quotes.",
+      "html": "<div class=\"ds-card\"><span class=\"ds-card__badge\">🎨</span><h3 class=\"ds-card__title\">Mirror Painting</h3><p class=\"ds-card__body\">Paint a mirror you'll actually hang up.</p></div>",
+      "css": ".ds-card { display: flex; flex-direction: column; gap: 16px; border-radius: 24px; border: 1px solid rgba(36,28,28,0.1); background: rgba(255,107,87,0.1); padding: 24px; } .ds-card__badge { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 16px; background: rgba(255,255,255,0.7); color: #ff6b57; font-size: 24px; } .ds-card__title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 18px; color: #ff6b57; margin: 0; } .ds-card__body { font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(36,28,28,0.7); margin: 0; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "White field on a pastel form card; border shifts solid coral on focus, no glow ring.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Your name\" />",
+      "css": ".ds-input { width: 100%; border-radius: 12px; border: 1px solid rgba(36,28,28,0.15); background: #ffffff; padding: 12px 16px; font-family: 'Inter', sans-serif; font-size: 14px; color: #241c1c; } .ds-input::placeholder { color: rgba(36,28,28,0.4); } .ds-input:focus { outline: none; border-color: #ff6b57; }"
+    },
+    {
+      "name": "Sticky Nav",
+      "kind": "nav",
+      "refersTo": "nav-header",
+      "description": "Translucent cream header with backdrop blur and hairline border; coral link hover, no underline.",
+      "html": "<header class=\"ds-nav\"><span class=\"ds-nav__brand\">Blend by Malak</span><nav class=\"ds-nav__links\"><a class=\"ds-nav__link\" href=\"#\">Home</a><a class=\"ds-nav__link\" href=\"#\">About</a><a class=\"ds-nav__link\" href=\"#\">Workshops</a></nav></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; background: rgba(255,248,240,0.9); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(36,28,28,0.1); } .ds-nav__brand { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 18px; color: #241c1c; } .ds-nav__links { display: flex; gap: 24px; } .ds-nav__link { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; color: rgba(36,28,28,0.8); text-decoration: none; transition: color 0.15s; } .ds-nav__link:hover { color: #ff6b57; }"
+    },
+    {
+      "name": "Reserve Modal Day Pill",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Signature component: a calendar day cell inside the Reserve-your-spot modal. Bookable days are turquoise pills; the selected day inverts to solid coral; unavailable days are dimmed text only.",
+      "html": "<div class=\"ds-daypills\"><button class=\"ds-day ds-day--bookable\">6</button><button class=\"ds-day ds-day--selected\">8</button><button class=\"ds-day ds-day--off\" disabled>9</button></div>",
+      "css": ".ds-daypills { display: flex; gap: 6px; } .ds-day { aspect-ratio: 1; width: 36px; border: none; border-radius: 12px; font-family: 'Inter', sans-serif; font-size: 14px; cursor: pointer; } .ds-day--bookable { background: rgba(46,196,182,0.1); color: #241c1c; } .ds-day--bookable:hover { background: rgba(46,196,182,0.2); } .ds-day--selected { background: #ff6b57; color: #ffffff; font-weight: 600; } .ds-day--off { background: transparent; color: rgba(36,28,28,0.25); cursor: not-allowed; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Café Paint Table",
+    "overview": "Blend by Malak is a Doha pop-up that turns café tables into paint stations for people with zero art experience who just want a good hangout. The visual system reads like that table itself: bright, uncomplicated, low-stakes, communal — a spread of open paint pots and mismatched pastel colors, not a gallery wall. Every surface stays playful and social rather than polished or precious; the site is simultaneously a self-serve booking funnel for consumers and a pitch asset for café/corporate partners, so it has to look legitimate without ever tipping into corporate or fine-art register. This system explicitly rejects the generic 'art class' stock-template look — no white-box gallery minimalism, no stock photography of unrelated hands with paintbrushes, no institutional polish. Real Instagram-native photography and video is the hero asset; layouts exist to give that content room, not to compete with it.",
+    "keyCharacteristics": [
+      "A six-color pastel rotation (coral, turquoise, mustard, blush, navy, plum) cycles across cards instead of one repeated accent.",
+      "Flat, hairline-bordered cards in soft tinted fills — no drop shadows except on the WhatsApp CTA.",
+      "Fully rounded pill buttons and generously rounded card corners (24px) — nothing sharp-edged or clinical.",
+      "Bilingual by construction: every layout mirrors correctly in Arabic/RTL, with a distinct Arabic type family (Cairo)."
+    ],
+    "rules": [
+      { "name": "The One Pot Per Card Rule", "body": "Each card in a list gets exactly one pastel tone from the six-color rotation via pastelTones[index % 6] — never repeated flat white, never more than one accent color inside a single card.", "section": "colors" },
+      { "name": "The One Loud Face Rule", "body": "Fredoka only ever appears on headings and buttons. Body copy is always Inter (or Cairo in RTL) — never both display and body set in the same bouncy face.", "section": "typography" },
+      { "name": "The Lit-Button-Only Rule", "body": "If it isn't the thing you're supposed to tap next, it doesn't get a shadow. Cards and containers stay flat; only actionable CTAs earn a glow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do cycle every list of cards through the six-tone pastel rotation (lib/pastelTones.ts) — one tone per card, no repeats of plain white down a list.",
+      "Do keep buttons fully pill-shaped (rounded-full) and cards generously rounded (rounded-3xl/rounded-2xl) — nothing sharp.",
+      "Do reserve the coral CTA glow (shadow-lg shadow-coral/30) for the one action per screen that matters; every other surface stays flat.",
+      "Do mirror every layout correctly in Arabic/RTL — nav order, calendar direction, icon flips — rather than trusting automatic text-direction alone.",
+      "Do let real workshop photography and video fill cards edge-to-edge; the work is the sell, not the copy around it."
+    ],
+    "donts": [
+      "Don't introduce a generic 'art class' stock-template look — no white-box gallery minimalism, no stock photography of unrelated hands with paintbrushes, no institutional/gallery polish.",
+      "Don't add drop shadows to cards, nav, or containers. The system is flat by design; shadows are reserved for the primary CTA only.",
+      "Don't set body copy in Fredoka (or Cairo at heading weight) — display type stays on headings and buttons only.",
+      "Don't introduce a second gray/neutral ink color for de-emphasized text; use charcoal at reduced opacity (/70, /80) instead of a separate gray token.",
+      "Don't build a competing booking form or flow that doesn't resolve to a pre-filled WhatsApp link — every CTA ends at wa.me."
+    ]
+  }
+}
