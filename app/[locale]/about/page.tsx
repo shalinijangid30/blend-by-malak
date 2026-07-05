@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { assetPath } from "@/lib/assetPath";
+import { pastelTones } from "@/lib/pastelTones";
 
 const cafePartners = ["Isaan Cafe", "Ipanema Coffee", "The Books Cafe"];
 
@@ -25,8 +26,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         <p className="mt-3 text-lg leading-relaxed text-charcoal/80">{t("story1")}</p>
         <p className="mt-4 text-lg leading-relaxed text-charcoal/80">{t("story2")}</p>
 
-        <div className="mt-10 rounded-3xl bg-white p-8 text-center">
-          <h2 className="font-heading text-xl font-semibold text-coral">{t("philosophyTitle")}</h2>
+        <div className={`mt-10 rounded-3xl ${pastelTones[0].bg} p-8 text-center`}>
+          <h2 className={`font-heading text-xl font-semibold ${pastelTones[0].accent}`}>{t("philosophyTitle")}</h2>
           <p className="mt-3 text-charcoal/70">{t("philosophyBody")}</p>
         </div>
 
