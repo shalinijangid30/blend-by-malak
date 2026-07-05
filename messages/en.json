@@ -52,6 +52,20 @@
     "scheduleSubtitle": "Location rotates by café partner — updated every week.",
     "spotsLeftShort": "left"
   },
+  "reserveModal": {
+    "title": "Pick a date & time",
+    "subtitle": "Choose when you'd like to join {workshop}.",
+    "selectDate": "Select a date",
+    "availableNote": "Sessions run Monday, Wednesday & Friday",
+    "selectTime": "Select a time",
+    "morning": "Morning · 11:00 AM",
+    "afternoon": "Afternoon · 3:00 PM",
+    "evening": "Evening · 6:30 PM",
+    "confirmCta": "Confirm on WhatsApp",
+    "close": "Close",
+    "prevMonth": "Previous month",
+    "nextMonth": "Next month"
+  },
   "privateEvents": {
     "title": "Private Events",
     "subtitle": "Birthdays, hen parties, girls' hangouts, corporate team-building — we set up wherever you are.",
