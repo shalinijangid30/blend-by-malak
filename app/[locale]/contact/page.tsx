@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { buildWaLink } from "@/lib/whatsapp";
+import { pastelTones } from "@/lib/pastelTones";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const locations = ["Isaan Cafe, West Bay", "Ipanema Coffee, Msheireb", "The Books Cafe, Katara"];
@@ -16,8 +17,8 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       <h1 className="font-heading text-3xl font-semibold text-charcoal sm:text-4xl">{t("title")}</h1>
       <p className="mt-2 text-charcoal/70">{t("subtitle")}</p>
 
-      <div className="mt-8 rounded-3xl border border-charcoal/10 bg-white p-8 text-center">
-        <h2 className="font-heading text-xl font-semibold text-charcoal">{t("whatsappTitle")}</h2>
+      <div className={`mt-8 rounded-3xl border border-charcoal/10 ${pastelTones[1].bg} p-8 text-center`}>
+        <h2 className={`font-heading text-xl font-semibold ${pastelTones[1].accent}`}>{t("whatsappTitle")}</h2>
         <p className="mt-2 text-charcoal/70">{t("whatsappBody")}</p>
         <WhatsAppButton
           href={buildWaLink(tCommon("whatsappCta"))}

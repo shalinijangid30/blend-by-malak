@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { buildWaLink } from "@/lib/whatsapp";
+import { pastelTones } from "@/lib/pastelTones";
 import type { Locale } from "@/i18n/routing";
 
 export function PrivateEventForm({ locale }: { locale: Locale }) {
@@ -21,12 +22,13 @@ export function PrivateEventForm({ locale }: { locale: Locale }) {
     window.open(buildWaLink(message), "_blank", "noopener,noreferrer");
   }
 
+  const tone = pastelTones[4]; // plum — matches the Private Events category card elsewhere on the site
   const inputClasses =
     "w-full rounded-xl border border-charcoal/15 bg-white px-4 py-3 text-sm text-charcoal placeholder:text-charcoal/40 focus:border-coral focus:outline-none";
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 rounded-3xl border border-charcoal/10 bg-white p-6">
-      <h2 className="font-heading text-xl font-semibold text-charcoal">{t("formTitle")}</h2>
+    <form onSubmit={handleSubmit} className={`space-y-4 rounded-3xl border border-charcoal/10 ${tone.bg} p-6`}>
+      <h2 className={`font-heading text-xl font-semibold ${tone.accent}`}>{t("formTitle")}</h2>
       <input
         required
         value={name}
