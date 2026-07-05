@@ -14,10 +14,10 @@ export function Navbar({ locale }: { locale: Locale }) {
 
   const links = [
     { href: `/${locale}`, label: t("nav.home") },
+    { href: `/${locale}/about`, label: t("nav.about") },
     { href: `/${locale}/workshops`, label: t("nav.workshops") },
     { href: `/${locale}/private-events`, label: t("nav.privateEvents") },
     { href: `/${locale}/gallery`, label: t("nav.gallery") },
-    { href: `/${locale}/about`, label: t("nav.about") },
     { href: `/${locale}/contact`, label: t("nav.contact") },
   ];
 
